@@ -10,36 +10,17 @@ let rockImage = 'rock.png';
 let speedXRock = 3;
 let speedYRock = 3;
 
-let posXPaper = 550;
+let posXPaper = 450;
 let posYPaper = 400;
 let paperImage = 'paper.png';
 let speedXPaper = 3;
 let speedYPaper = 3;
 
 let posXScissors = 650;
-let posYScissors = 200;
+let posYScissors = 300;
 let scissorsImage = 'scissors.png';
 let speedXScissors = 3;
 let speedYScissors = 3;
-
-function moveRock() {
-  posXRock += speedXRock;
-  posYRock += speedYRock;
-
-  rock.style.transform = `translate(${posXRock}px, ${posYRock}px)`;
-
-  if (posXRock <= 0 || posXRock >= game.offsetWidth - rock.offsetWidth) {
-    speedXRock = -speedXRock;
-  }
-  if (posYRock <= 0 || posYRock >= game.offsetHeight - rock.offsetHeight) {
-    speedYRock = -speedYRock;
-  }
-
-  checkCollisions(rock, paper);
-  checkCollisions(rock, scissors);
-
-  window.requestAnimationFrame(moveRock);
-}
 
 function movePaper() {
   posXPaper += speedXPaper;
@@ -59,7 +40,26 @@ function movePaper() {
 
   window.requestAnimationFrame(movePaper);
 }
+console.log(posXPaper, posYPaper)
+function moveRock() {
+  posXRock += speedXRock;
+  posYRock += speedYRock;
 
+  rock.style.transform = `translate(${posXRock}px, ${posYRock}px)`;
+
+  if (posXRock <= 0 || posXRock >= game.offsetWidth - rock.offsetWidth) {
+    speedXRock = -speedXRock;
+  }
+  if (posYRock <= 0 || posYRock >= game.offsetHeight - rock.offsetHeight) {
+    speedYRock = -speedYRock;
+  }
+
+  checkCollisions(rock, paper);
+  checkCollisions(rock, scissors);
+
+  window.requestAnimationFrame(moveRock);
+}
+console.log(posXRock, posYRock)
 function moveScissors() {
   posXScissors += speedXScissors;
   posYScissors += speedYScissors;
@@ -78,7 +78,7 @@ function moveScissors() {
 
   window.requestAnimationFrame(moveScissors);
 }
-
+console.log(posXScissors, posYScissors)
 function checkCollisions(element1, element2) {
   const rect1 = element1.getBoundingClientRect();
   const rect2 = element2.getBoundingClientRect();
@@ -97,12 +97,12 @@ function checkCollisions(element1, element2) {
     if (element1 === rock && element2 === paper) {
       rockImage = 'paper.png';
       paperImage = 'rock.png';
+    }  else if (element1 === paper && element2 === scissors) {
+      paperImage = 'scissors.png';
+      scissorsImage = 'paper.png';
     } else if (element1 === rock && element2 === scissors) {
       rockImage = 'scissors.png';
       scissorsImage = 'rock.png';
-    } else if (element1 === paper && element2 === scissors) {
-      paperImage = 'scissors.png';
-      scissorsImage = 'paper.png';
     }
 
     speedXRock = tempSpeedX2;
