@@ -40,7 +40,7 @@ function movePaper() {
 
   window.requestAnimationFrame(movePaper);
 }
-console.log(posXPaper, posYPaper)
+// console.log(posXPaper, posYPaper)
 function moveRock() {
   posXRock += speedXRock;
   posYRock += speedYRock;
@@ -59,7 +59,7 @@ function moveRock() {
 
   window.requestAnimationFrame(moveRock);
 }
-console.log(posXRock, posYRock)
+// console.log(posXRock, posYRock)
 function moveScissors() {
   posXScissors += speedXScissors;
   posYScissors += speedYScissors;
@@ -78,7 +78,7 @@ function moveScissors() {
 
   window.requestAnimationFrame(moveScissors);
 }
-console.log(posXScissors, posYScissors)
+// console.log(posXScissors, posYScissors)
 function checkCollisions(element1, element2) {
   const rect1 = element1.getBoundingClientRect();
   const rect2 = element2.getBoundingClientRect();
