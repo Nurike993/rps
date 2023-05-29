@@ -1,0 +1,40 @@
+.game {
+    width: 900px;
+    height: 650px;
+    margin: auto;
+    border: 4px solid black;
+    background-image: url(board.jpg);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rock {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    background-image: url(rock.png);
+    background-size: 120px 120px;
+    background-color: blue;
+  }
+  
+  .paper {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    background-image: url(paper.png);
+    background-size: 120px 120px;
+    background-color: blue;
+  }
+  
+  .scissors {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    background-image: url(scissors.png);
+    background-size: 120px 120px;
+    background-color: blue;
+  }
+  
+  .music {
+    margin-left: 40%;
+  }  
