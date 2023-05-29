@@ -14,7 +14,7 @@
     position: absolute;
     background-image: url(rock.png);
     background-size: 120px 120px;
-    background-color: blue;
+    
   }
   
   .paper {
@@ -23,7 +23,7 @@
     position: absolute;
     background-image: url(paper.png);
     background-size: 120px 120px;
-    background-color: blue;
+    
   }
   
   .scissors {
@@ -32,7 +32,7 @@
     position: absolute;
     background-image: url(scissors.png);
     background-size: 120px 120px;
-    background-color: blue;
+ 
   }
   
   .music {
